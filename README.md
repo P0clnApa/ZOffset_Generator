@@ -1,4 +1,4 @@
-#Zoffset_Generator
+# Zoffset_Generator
 
 # 概要
 Pymeshlabを用いてZbrushのメッシュ表面を (Tool:Deformation:Inflate)よりは正確にオフセットするスクリプト郡です。
