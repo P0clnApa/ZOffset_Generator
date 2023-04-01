@@ -16,6 +16,9 @@ Zoffset_Generator_Package/→Users...この中身を上記フォルダに移し�
 Zoffset_Generator_Package/→Zplugs64  この中身を任意のZbrushのZplugs64フォルダに入れてください。
 
 # 使い方
+
+Zpluginの中にCustomCommandのサブパレットが出現します。 ↓中身
+
 ![Screenshot_2023-04-01 134835](https://user-images.githubusercontent.com/17403397/229266221-200d03c1-adf1-4196-b79f-78b775a9a75c.png)
 
 Offset Distance = mm単位の数値スライダーです。0.1mmが下限、50mmを上限としてます。
