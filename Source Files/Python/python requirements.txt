@@ -1,0 +1,10 @@
+for generating offset mesh
+
+numpy
+pymeshlab
+
+
+
+for generating exe file
+
+cxFreeze
