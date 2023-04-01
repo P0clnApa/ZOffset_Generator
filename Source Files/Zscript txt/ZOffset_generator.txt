@@ -35,7 +35,7 @@
 
 
 
-
+[ISubPalette, "Zplugin:CustomCommand"]
 
 [IButton,"Zplugin:CustomCommand: ----------- Offset Generator ----------- ",,,1,1,,,.15]
 
