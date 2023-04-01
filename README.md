@@ -1,5 +1,8 @@
 # Zoffset_Generator
 
+![Fsl3F5raQAAFTNG](https://user-images.githubusercontent.com/17403397/229268067-3b58cc01-7f9e-42a5-84b5-9fd6c9d83bf8.png)
+
+
 # 概要
 Pymeshlabを用いてZbrushのメッシュ表面を (Tool:Deformation:Inflate)よりは正確にオフセットするスクリプト郡です。
 
