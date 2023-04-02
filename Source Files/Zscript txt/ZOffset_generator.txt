@@ -50,7 +50,7 @@
 
 [ISwitch,"Zplugin:CustomCommand:Offset Positive",0,"offset Direction switch , off to negative offset, on to positive offset", , , ,.72]
 
-
+[IEnable,"Zplugin:CustomCommand:Offset Positive",1 ]
 
 
 
