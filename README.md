@@ -6,6 +6,8 @@
 # 概要
 Pymeshlabを用いてZbrushのメッシュ表面を (Tool:Deformation:Inflate)よりは正確にオフセットするスクリプト郡です。
 
+このスクリプトはWindows専用です。
+
 # インストール方法
 このスクリプトはUsers\Public\Documents\Script_Workspaceというフォルダを受け渡しフォルダとして扱い動作します
 
