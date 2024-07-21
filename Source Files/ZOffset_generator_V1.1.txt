@@ -1,0 +1,62 @@
+[VarDef , WorkDir ,"C:\Users\Public\Documents\Script_Workspace\"]
+[VarDef , Offreso , 0.2]
+[VarDef , Offdist , 1.0]
+[VarDef , Expreso, 0.2]
+[VarDef , ExpDist, 1 ]
+
+    [VarDef, WrkTool, 1]
+    [VarDef, DefmeshTool, 41]
+
+
+[RoutineDef, StartOffset,  
+    /*Calculation for text output*/
+    [If, [IGet, "Zplugin:ZOffset Generator:Offset Positive"] > 0.9,
+        [VarSet,Expdist,Offdist],    
+        [VarSet,ExpDist,NEG(Offdist)]
+    ]
+    [If,[IGet,"ZPlugin:ZOffset Generator:Offset Distance"] > 0.8,
+        [VarSet,Expreso,Offreso],
+        [VarSet,Expreso,(Offdist/4)]
+    ]
+    /*Things Export phase*/
+    [ShellExecute,[StrMerge,"Echo ",#Expreso," > ",#WorkDir,"offset_note_resolution.txt"]]
+    [ShellExecute,[StrMerge,"Echo ",#Expdist," > ",#WorkDir,"offset_note_distance.txt"]]
+    [FileNameSetNext, [StrMerge,#WorkDir,"RefMesh.obj"]]
+    [IPress, "Tool:Export"]
+    [ShellExecute, "C:\Users\Public\Documents\Script_Workspace\target\offset_generator.exe"]
+
+//Zbrush will stops till Process is done
+
+    [VarSet, WrkTool, [ToolGetActiveIndex]]
+    [ToolSelect, #DefmeshTool]
+    [Ipress, "Tool:Subtool:Copy"]
+    [ToolSelect, WrkTool]
+    [Ipress, "Tool:Subtool:Paste"]
+	[FileNameSetNext, [StrMerge, #WorkDir , "Offset_Mesh.obj"] ]
+	[IPress, "Tool:Import" ]
+]
+
+
+
+
+
+[ISubPalette, "Zplugin:ZOffset Generator"]
+
+[IButton,"Zplugin:ZOffset Generator: ----------- Offset Generator ----------- ",,,1,1,,,.15]
+
+[IButton,"Zplugin:ZOffset Generator:Start Offset","Start Offset Calculation",
+    [RoutineCall,StartOffset]
+
+,,.25,,  ,.25]
+
+[ISlider,"ZPlugin:ZOffset Generator:Offset Distance",1.0,0.1,0.1,50,"Set Offset Distance",
+    [VarSet,Offdist ,[IGet, "ZPlugin:ZOffset Generator:Offset Distance"]],
+,.72]
+
+[ISwitch,"Zplugin:ZOffset Generator:Offset Positive",0,"offset Direction switch , off to negative offset, on to positive offset", , , ,.72]
+
+[IEnable,"Zplugin:ZOffset Generator:Offset Positive" ]
+
+
+
+
